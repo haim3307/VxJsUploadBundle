@@ -3,6 +3,8 @@
 namespace Vx\JsUploadBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Vx\JsUploadBundle\Event\UploaderEvent;
+use Vx\JsUploadBundle\Event\UploaderOptionsEvent;
 use Vx\JsUploadBundle\Uploader\CustomUploadHandler as UploadHandler;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -27,6 +29,7 @@ class UploadController extends Controller
             return new Response('Erreur profile: ' . $profile . ' doesn\'t existe');
 
         $options['filename'] = $filename;
+        $options = $this->dispatchOptionsEvent($options, UploaderEvent::EVENT_OPTIONS_UPLOAD);
 
         $handler = new UploadHandler($this->generateUrl('vx_js_delete', array('profile' => $profile)), $options);
         $resp = new Response(json_encode($handler->post(false)));
@@ -41,6 +44,7 @@ class UploadController extends Controller
 
         if ($options == false)
             return new Response('Erreur profile');
+        $options = $this->dispatchOptionsEvent($options, UploaderEvent::EVENT_OPTIONS_GET);
 
         $handler = new UploadHandler($this->generateUrl('vx_js_delete', array('profile' => $profile)), $options);
         $resp = new Response(json_encode($handler->get(false)));
@@ -56,6 +60,7 @@ class UploadController extends Controller
             return new Response('Erreur: '.$profile.' doesn\'t exists');
 
         $options['filename'] = $filename;
+        $options = $this->dispatchOptionsEvent($options, UploaderEvent::EVENT_OPTIONS_DELETE);
 
         $handler = new UploadHandler(null, $options);
         $resp = new Response(json_encode($handler->delete(false)));
@@ -63,6 +68,14 @@ class UploadController extends Controller
 
         return $resp;        
     }
+
+
+    private function dispatchOptionsEvent($options, $eventType)
+    {
+        $options = $this->get('event_dispatcher')->dispatch($eventType, new UploaderOptionsEvent($options))->getOptions();
+        return $options;
+    }
+
 }
 
 ?>
