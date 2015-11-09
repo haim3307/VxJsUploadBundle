@@ -14,7 +14,7 @@ Add VxJsUploadBundle in your composer.json:
 ``` json
 {
     "require": {
-        "vx/js-upload-bundle": "dev-master"
+        "ami-m/vxjs-upload-bundle": "dev-master"
     }
 }
 ```
@@ -22,7 +22,7 @@ Add VxJsUploadBundle in your composer.json:
 Now you can download the bundle with composer:
 
 ``` bash
-$ php composer.phar update vx/js-upload-bundle
+$ php composer.phar update ami-m/vxjs-upload-bundle
 ```
 
 ### AppKernel
@@ -127,3 +127,6 @@ If you want to change the name of the file after upoad:
 #### Custom behaviour
 
 To add some custom behaviour when you add a file or after uploaded a file, take a look at the [BlueImp jQuery file uploader](https://github.com/blueimp/jQuery-File-Upload/wiki/Options#callback-options) documentation.
+
+Also, note that and event is being fired by the UploadController each time the upload options are loaded.
+You can tweak the options through that event.
