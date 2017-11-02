@@ -1,8 +1,8 @@
 {
     "name": "ami-m/vxjs-upload-bundle",
     "type": "symfony-bundle",
-    "description": "File uploads bundle for Symfony 2.2 based on Blueimp jQuery File Upload",
-    "keywords": ["upload", "jQuery", "file", "uploader", "blueimp", "symfony", "symfony bundle", "bundle", "symfony-2.2"],
+    "description": "File uploads bundle for Symfony based on Blueimp jQuery File Upload",
+    "keywords": ["upload", "jQuery", "file", "uploader", "blueimp", "symfony", "symfony bundle", "bundle"],
     "homepage": "https://github.com/ami-m/VxJsUploadBundle",
     "license": "MIT",
     "authors": [
@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "symfony/framework-bundle": "2.*"
+        "symfony/framework-bundle": "2.* || ~3"
     },
     "autoload": {
         "psr-0": { "Vx\\JsUploadBundle": "" }

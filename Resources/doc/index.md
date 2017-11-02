@@ -3,7 +3,7 @@ Usage guide
 
 ## Preamble
 
-This version of the bundle was developped and test with Symfony 2.2 only. However, this version should work with Symfony 2.1 and 2.0 but some bug may happend.
+This version of the bundle was developed and test with Symfony 2.2 only. However, this version should work with Symfony 2.1 and 2.0 but some bug may happend.
 
 ## Installation
 
