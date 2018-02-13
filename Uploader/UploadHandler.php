@@ -372,9 +372,10 @@ class UploadHandler
             $this->error_messages[$error] : $error;
     }
 
-    function get_config_bytes($val) {
+     public function get_config_bytes($val) {
         $val = trim($val);
         $last = strtolower($val[strlen($val)-1]);
+        $val = intval($val, 10);
         switch($last) {
             case 'g':
                 $val *= 1024;
