@@ -3,7 +3,7 @@
 namespace Vx\JsUploadBundle\Event;
 
 
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Contracts\EventDispatcher\Event;
 
 class UploaderEvent extends Event
 {
