@@ -2,6 +2,12 @@ parameters:
 #    vx_js_upload.example.class: Vx\JsUploadBundle\Example
 
 services:
-#    vx_js_upload.example:
-#        class: %vx_js_upload.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+    public: true       # Allows optimizing the container by removing unused services; this also means
+
+  Vx\JsUploadBundle\Controller\UploadController:
+    tags: [ 'controller.service_arguments' ]
+    calls:
+      - [setContainer, ['@service_container']]
