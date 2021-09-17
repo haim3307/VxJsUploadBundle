@@ -2,7 +2,7 @@
 
 namespace Vx\JsUploadBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController as Controller;
 use Vx\JsUploadBundle\Event\UploaderEvent;
 use Vx\JsUploadBundle\Event\UploaderOptionsEvent;
 use Vx\JsUploadBundle\Uploader\CustomUploadHandler as UploadHandler;
