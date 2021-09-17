@@ -17,8 +17,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('vx_js_upload');
+        $treeBuilder = new TreeBuilder('vx_js_upload');
 
         return $treeBuilder;
     }
