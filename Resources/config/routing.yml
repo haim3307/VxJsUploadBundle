@@ -1,13 +1,13 @@
 vx_js_upload:
     path:  /upload/{profile}/{filename}
-    defaults: { _controller: VxJsUploadBundle:Upload:upload, profile: default, filename: ~}
+    defaults: { _controller: Vx\JsUploadBundle\Controller\UploadController::uploadAction, profile: default, filename: ~}
     methods: [POST, GET]
 
 vx_js_delete:
     path:  /delete/{profile}/{filename}
-    defaults: { _controller: VxJsUploadBundle:Upload:delete, filename: ~}
+    defaults: { _controller: Vx\JsUploadBundle\Controller\UploadController::deleteAction, filename: ~}
     methods: [DELETE]
 
 vx_js_get:
     path:  /get/{profile}
-    defaults: { _controller: VxJsUploadBundle:Upload:get, profile: default }
+    defaults: { _controller: Vx\JsUploadBundle\Controller\UploadController::getAction, profile: default }
