@@ -19,6 +19,29 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder('vx_js_upload');
 
+        
+        // upload, external_pages, worker, contact, customer, logo, lead;
+
+        $treeBuilder
+            ->getRootNode()
+            ->children()
+                ->arrayNode('profile')
+                ->arrayPrototype()
+                    ->children()
+                        ->scalarNode('unique_filename')->end()
+                        ->scalarNode('upload_dir')->end()
+                    ->end()
+                    ->children()
+                        ->arrayNode('image_versions')
+                            ->arrayPrototype()
+                                ->children()
+                                    ->integerNode('max_height')->end()
+                                    ->integerNode('max_width')->end()
+                                    ->booleanNode('crop')->end()
+                                ->end()
+                            ->end()
+        ;
+
         return $treeBuilder;
     }
 }
