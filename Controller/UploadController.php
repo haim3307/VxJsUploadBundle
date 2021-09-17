@@ -72,10 +72,8 @@ class UploadController extends Controller
 
     private function dispatchOptionsEvent($options, $eventType)
     {
-        $options = $this->get('event_dispatcher')->dispatch($eventType, new UploaderOptionsEvent($options))->getOptions();
+        $options = $this->get('event_dispatcher')->dispatch(new UploaderOptionsEvent($options),$eventType)->getOptions();
         return $options;
     }
 
 }
-
-?>
