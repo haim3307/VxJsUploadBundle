@@ -1,5 +1,5 @@
 {
-    "name": "ami-m/vxjs-upload-bundle",
+    "name": "haim3307/vxjs-upload-bundle",
     "type": "symfony-bundle",
     "description": "File uploads bundle for Symfony based on Blueimp jQuery File Upload",
     "keywords": ["upload", "jQuery", "file", "uploader", "blueimp", "symfony", "symfony bundle", "bundle"],
